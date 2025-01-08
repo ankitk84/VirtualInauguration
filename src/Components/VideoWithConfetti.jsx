@@ -47,8 +47,12 @@ const VideoWithConfetti = () => {
       </video>
 
       {/* Button to start the video and trigger confetti */}
-      <button onClick={handlePlayButtonClick}>Please Inaugurate from Here!!!</button>
+      {/* <button onClick={handlePlayButtonClick}>Please Inaugurate from Here!!!</button> */}
 
+      {/* Button to start the video and trigger confetti */}
+      <button onClick={handlePlayButtonClick} disabled={isPlaying}>
+        {isPlaying ? 'Congratulations to All!!!' : 'Please Inaugurate from Here!!!'}
+      </button>
       {/* Confetti effect */}
       {showConfetti && <div style={{ position: 'fixed', top: 0, left: 0 }}></div>} 
     </div>

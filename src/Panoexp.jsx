@@ -7,7 +7,9 @@ const PanoViewer = ({ image, hotspots }) => {
   const mountRef = useRef(null);
   const [tooltip, setTooltip] = useState(null);
   const [hoveredHotspot, setHoveredHotspot] = useState(null); 
-  const [activeComponent, setActiveComponent] = useState(null); 
+  const [activeComponent, setActiveComponent] = useState(null);
+  
+  setActiveComponent(<RibbonCutting/>);
 
   useEffect(() => {
     let scene, camera, renderer, controls, mesh;
@@ -71,7 +73,7 @@ const PanoViewer = ({ image, hotspots }) => {
       if (intersects.length > 0) {
         setHoveredHotspot(intersects[0].object.userData);
         document.body.style.cursor = 'pointer';
-        const intersectedObject = intersects[0].object;
+        // const intersectedObject = intersects[0].object;
         const intersectedPoint = intersects[0].point;
     
         // Convert the world position of the hotspot to screen coordinates
@@ -184,7 +186,7 @@ const PanoViewer = ({ image, hotspots }) => {
       material.dispose();
       geometry.dispose();
     };
-  }, [image, hotspots]);
+  }, [image, hotspots, tooltip]);
 
   return (
     <div ref={mountRef} style={{ width: '100vw', height: '100vh' }}>
