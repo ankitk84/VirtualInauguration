@@ -1,0 +1,45 @@
+.ribbon-cutting-container {
+    position: absolute;  /* This allows the component to overlap other content */
+    /* top: 50%;  Adjust vertical position */
+    /* left: 50%;  Adjust horizontal position */
+    transform: translate(-50%, -50%); /* Center the element */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.9);  /* Slight transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;  /* Higher z-index to ensure it appears above other content */
+    width: 300px;  /* Fixed width to control its size */
+    text-align: center;
+  }
+  
+  h1 {
+    color: #4CAF50;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e64a19;
+  }
+  
+  .celebration-message {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+  }
+  
+  .celebration-message h2 {
+    color: #4CAF50;
+  }
+  

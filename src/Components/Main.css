@@ -1,0 +1,95 @@
+.inauguration-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  
+  .locations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    top: 500px;
+  }
+  
+  .location {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .location h2 {
+    color: #2c3e50;
+  }
+  
+  .BPCLlogo{
+    
+    position:absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: auto;
+    height: 100px;
+    /* display: block; */
+    
+    
+    
+  }
+  .location p {
+    color: #7f8c8d;
+    font-size: 1em;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  .details-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-content h2 {
+    color: #34495e;
+  }
+  
+  .popup-content p {
+    color: #7f8c8d;
+  }
+  
+  .popup-content button {
+    background-color: #e74c3c;
+  }
+  
+  .popup-content button:hover {
+    background-color: #c0392b;
+  }
+  
