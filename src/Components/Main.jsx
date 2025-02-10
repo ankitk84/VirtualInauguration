@@ -19,11 +19,11 @@ const Main= () => {
   };
 
   const locations = [
-    {
-      name: 'Jobner',
-      description: 'The welfare facility at Jobner is now operational, offering essential services to the local community.',
-      inaugurationMessage: 'We are excited to officially inaugurate the welfare facility in Jobner, which will serve as a center for healthcare and community support.',
-    },
+    // {
+    //   name: 'Jobner',
+    //   description: 'The welfare facility at Jobner is now operational, offering essential services to the local community.',
+    //   inaugurationMessage: 'We are excited to officially inaugurate the welfare facility in Jobner, which will serve as a center for healthcare and community support.',
+    // },
     {
       name: 'Kota',
       description: 'The welfare facility in Kota aims to enhance local infrastructure and provide better resources for the population.',
@@ -36,6 +36,11 @@ const Main= () => {
     },
     {
       name: 'Salawas',
+      description: 'Salawas now has its own welfare facility that will contribute to the region’s overall development and community welfare.',
+      inaugurationMessage: 'The Salawas welfare facility is now open, providing vital services and contributing to the region’s growth.',
+    },
+    {
+      name: 'Mumbai',
       description: 'Salawas now has its own welfare facility that will contribute to the region’s overall development and community welfare.',
       inaugurationMessage: 'The Salawas welfare facility is now open, providing vital services and contributing to the region’s growth.',
     },

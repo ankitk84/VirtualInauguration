@@ -1,117 +1,82 @@
-.curtains-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #000; /* Background behind the curtains */
+/* Curtain.css */
+.curtain-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.curtain-left,
+.curtain-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #8B0000; /* Dark red */
+  transition: transform 1s ease-in-out;
+  overflow: hidden;
+}
+
+.curtain-left {
+  left: 0;
+}
+
+.curtain-right {
+  right: 0;
+}
+
+.curtain-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 50 C 20 0, 30 100, 50 50 S 80 0, 100 50' fill='%238B0000'/%3E%3C/svg%3E"); /* SVG wave */
+  background-size: 100% 200%; /* Adjust for wave height */
+  animation: wave 2s linear infinite; /* Adjust duration for speed */
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0% 0%;
   }
-  
-  .curtain {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to bottom, #8b0000, #400000); /* Curtain color */
-    overflow: hidden;
+  100% {
+    background-position: 100% 0%;
   }
-  
-  .curtain-left {
-    left: 0;
-    transform: translateX(0);
-    animation: waveCloseLeft 2s ease forwards;
-  }
-  
-  .curtain-right {
-    right: 0;
-    transform: translateX(0);
-    animation: waveCloseRight 2s ease forwards;
-  }
-  
-  .curtain.open.curtain-left {
-    animation: waveOpenLeft 2s ease forwards;
-  }
-  
-  .curtain.open.curtain-right {
-    animation: waveOpenRight 2s ease forwards;
-  }
-  
-  /* Wavy animations */
-  @keyframes waveOpenLeft {
-    0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-20%) rotate(2deg);
-    }
-    50% {
-      transform: translateX(-50%) rotate(-1deg);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  @keyframes waveOpenRight {
-    0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(20%) rotate(-2deg);
-    }
-    50% {
-      transform: translateX(50%) rotate(1deg);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  
-  @keyframes waveCloseLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(-50%) rotate(-1deg);
-    }
-    75% {
-      transform: translateX(-20%) rotate(2deg);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes waveCloseRight {
-    0% {
-      transform: translateX(100%);
-    }
-    20% {
-      transform: translateX(50%) rotate(1deg);
-    }
-    75% {
-      transform: translateX(20%) rotate(-2deg);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  .toggle-button {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #444;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 10;
-  }
-  
-  .toggle-button:hover {
-    background-color: #666;
-  }
-  
+}
+
+.stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 1;
+  text-align: center;
+}
+
+.curtain-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  z-index: 2;
+}

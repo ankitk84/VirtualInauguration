@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import JsConfetti from 'js-confetti';  // Correct import for js-confetti
-import Presentation from './Presentation11.mp4';  // Ensure the path is correct
+// import Presentation from './Presentation11.mp4';  // Ensure the path is correct
+import Presentation from './salaswas.mp4';
 
 const VideoWithConfetti = () => {
   const [isPlaying, setIsPlaying] = useState(false);
