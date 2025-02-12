@@ -139,9 +139,8 @@ const FirstMain = () => {
         {/* <Route path="/jobner" element={<JobnerInauguration />} /> */}
         <Route path="/kota" element={<KotaInauguration />} />
         <Route path="/bharatpur" element={<BharatpurInauguration />} />
-        <Route path="/salawas" element={<SalawasInauguration/>} />
-        <Route path="/mumbai" element={<Mumbai/>}/>
-
+        <Route path="/salawas" element={<SalawasInauguration/>} />        
+        <Route path="mumbai" element= {<Mumbai/>}/>
       </Routes>
     </Router>
     // <>
