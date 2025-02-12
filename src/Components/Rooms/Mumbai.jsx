@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import Pic1 from './pic1.jpg';
-import Pic2 from './pic2.jpg';
-import Pic3 from './pic3.jpg';
-import Pic4 from './pic4.jpg';
-import Pic5 from './pic5.jpg';
-import Pic6 from './pic6.jpg';
-import Pic7 from './pic7.jpg';
 import PannellumReact from './Pano13';
-
+import Pic1 from '../pic1.jpg';
+import Pic2 from '../pic2.jpg';
+import Pic3 from '../pic3.jpg';
+import Pic4 from '../pic4.jpg';
+import Pic5 from '../pic5.jpg';
+import Pic6 from '../pic6.jpg';
+import Pic7 from '../pic7.jpg'
 function Mumbai (){
     const scenes = [
         {
@@ -96,7 +95,21 @@ function Mumbai (){
     
      
     
-
+    //   const handleSceneChange = (direction) => {
+    //     setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
+     
+    //     setTimeout(() => {
+    //       setCurrentSceneIndex((prevIndex) => {
+    //         if (direction === 'next') {
+    //           return (prevIndex + 1) % scenes.length; // Cycle through scenes forward
+    //         } else if (direction === 'prev') {
+    //           return (prevIndex - 1 + scenes.length) % scenes.length; // Cycle backward
+    //         }
+    //         return prevIndex;
+    //       });
+    //       setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
+    //     }, 1500);
+    //  };
     const handleSceneChange = (targetSceneId) => {
       setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
     
@@ -136,3 +149,33 @@ export default Mumbai;
 
 
 
+
+ // const handleSceneChange = (isNextScene) => {
+      //   if (isNextScene) {
+      //     // Start Zoom-In Effect
+      //     setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
+    
+      //     setTimeout(() => {
+      //       // Switch to next scene after zoom effect completes
+      //       setCurrentSceneIndex((prevIndex) => (prevIndex + 1) % scenes.length);
+      //       setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" }); // Reset zoom instantly
+      //     }, 1500);
+      //   }
+      // };
+
+
+//   const handleSceneChange = (direction) => {
+  //     setTransitionStyle({ transform: 'scale(1.3)', transition: 'transform 1.5s ease-in-out' });
+
+  //     setTimeout(() => {
+  //         setCurrentSceneIndex((prevIndex) => {
+  //             const currentScene = scenes[prevIndex];
+  //             const hotspot = currentScene.hotspots.find(h => h.id === direction);
+  //             if (hotspot && hotspot.isNextScene) {
+  //                 return scenes.findIndex(scene => scene.image === hotspot.image);
+  //             }
+  //             return prevIndex;
+  //         });
+  //         setTransitionStyle({ transform: 'scale(1)', transition: 'transform 0.1s ease-in-out' });
+  //     }, 1500);
+  // };
