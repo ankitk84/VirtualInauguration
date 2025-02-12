@@ -41,8 +41,8 @@ const Main= () => {
     },
     {
       name: 'Mumbai',
-      description: 'Salawas now has its own welfare facility that will contribute to the region’s overall development and community welfare.',
-      inaugurationMessage: 'The Salawas welfare facility is now open, providing vital services and contributing to the region’s growth.',
+      description: 'Mumbai now has its own welfare facility that will contribute to the region’s overall development and community welfare.',
+      inaugurationMessage: 'The Mumbai welfare facility is now open, providing vital services and contributing to the region’s growth.',
     },
   ];
 
