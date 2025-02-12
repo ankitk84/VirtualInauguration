@@ -4,10 +4,10 @@ import React from 'react';
 // import Pano1 from './Panocopy.jpg'; 
 // import BPCLlogo from './Components/BPCLLogo.jpg';
 // import Main from './Components/Main';
-// import FirstMain from './Components/FirstMain';
+import FirstMain from './Components/FirstMain';
 // import Curtains from './Components/Curtains';
 // import PanoViewer from './Panoexp';
-import Mumbai from './Components/Rooms/Mumbai';
+// import Mumbai from './Components/Rooms/Mumbai';
 // import CurtainAnimation from './Components/CurtainAnimation';
 
 function App() {
@@ -46,8 +46,8 @@ function App() {
         
 {/* <Curtains/>   */}
 {/* <CurtainAnimation/> */}
-        {/* <FirstMain/> */}
-        <Mumbai/>
+        <FirstMain/>
+        {/* <Mumbai/> */}
 
         </div>
 
