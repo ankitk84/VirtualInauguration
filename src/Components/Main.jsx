@@ -72,7 +72,7 @@ const Main= () => {
           <div className="popup-content">
             <h2>{showDetails.name}</h2>
             <p>{showDetails.description}</p>
-            <p><strong>Inauguration Message: dfdg</strong> {showDetails.inaugurationMessage}</p>
+            <p><strong>Inauguration Message:</strong> {showDetails.inaugurationMessage}</p>
             <button onClick={handleCloseDetails}>Close</button>
           </div>
         </div>
