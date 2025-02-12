@@ -141,7 +141,7 @@ const FirstMain = () => {
         <Route path="/bharatpur" element={<BharatpurInauguration />} />
         
         <Route path="/salawas" element={<SalawasInauguration/>} />        
-        <Route path="/mumbai" element= {<Mumbai/>}/>
+        <Route path="/Mumbai" element= {<Mumbai/>}/>
       </Routes>
     </Router>
     // <>
