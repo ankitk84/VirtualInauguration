@@ -502,7 +502,7 @@ import { Canvas, useLoader, useThree, useFrame} from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import { gsap } from 'gsap';
 import RibbonCutting from '../RibbonCutting';
-const PannellumReact = ({ image, hotspots = [], onSceneChange }) => {
+function PannellumReact  ({ image, hotspots = [], onSceneChange }) {
 
   // Load Texture
   const texture = useLoader(THREE.TextureLoader, image);
