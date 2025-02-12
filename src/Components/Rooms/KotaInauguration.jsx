@@ -1,7 +1,5 @@
 import React from 'react';
-// import PanoViewer from '../PanoViewerContainer';
-// import Pano from '../../Pano.jpg';
-// import Pano1 from '../../Pano.jpg';
+
 // import Presentation from './Presentation11.gif';
 import VideoWithConfetti from '../VideoWithConfetti';
 function KotaInauguration (){
