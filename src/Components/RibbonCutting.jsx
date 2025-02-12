@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Confetti from "js-confetti";
-
 const confetti = new Confetti();
-
 const RibbonCutting = () => {
   const [cutting, setCutting] = useState(false);
   const [showScissors, setShowScissors] = useState(true);
@@ -11,7 +9,6 @@ const RibbonCutting = () => {
   const startCutting = () => {
     setCutting(true);
     setShowScissors(true); // Ensure scissors are visible when cutting starts
-
     // Trigger confetti after the ribbon cutting animation
     setTimeout(() => {
       confetti.addConfetti();
