@@ -1,4 +1,4 @@
-import React, {useState, startTransition} from 'react';
+import React, {useState, useTransition, Suspense} from 'react';
 import PannellumReact from './Pano13';
 import Pic1 from '../pic1.jpg';
 import Pic2 from '../pic2.jpg';
@@ -70,9 +70,7 @@ function Mumbai (){
           id: 6,
           image: Pic2,
           hotspots: [
-            // { id: 'a', pitch: 25, yaw: -75, text: 'Info Hotspot 3' },
-            // { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
-            // { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
+            // { id: 'a', pitch: 25, yaw: -75, text: 'Info Hotspot 3' },// { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },// { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
             { id: 'next',id1:3,  pitch: -8, yaw: 35, text: 'Next Scene', isNextScene: true },
             {id: 'prev',id1:7,pitch: -5, yaw: 45, text: 'prev Scene1', isPrevScene: true }, 
           ],
@@ -109,20 +107,24 @@ function Mumbai (){
     const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
   const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
 
+  const [startTransition] = useTransition(); // Removed `isPending`
+
   const handleSceneChange = (targetSceneId) => {
     setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
-
+  
     setTimeout(() => {
       startTransition(() => {
-        setCurrentSceneIndex(() => {
+        setCurrentSceneIndex((prevIndex) => {
           const newSceneIndex = scenes.findIndex(scene => scene.id === targetSceneId);
-          return newSceneIndex !== -1 ? newSceneIndex : currentSceneIndex;
+          return newSceneIndex !== -1 ? newSceneIndex : prevIndex;
         });
-
-        setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
       });
+  
+      setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
     }, 1500);
   };
+
+ 
     // Inside your PannellumReact component:
     <PannellumReact
       image={scenes[currentSceneIndex].image}
@@ -134,11 +136,18 @@ function Mumbai (){
       return (
         <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
           <div style={{ ...transitionStyle, position: "absolute", width: "100%", height: "100%" }}>
-            <PannellumReact
+            {/* <PannellumReact
               image={scenes[currentSceneIndex].image}
               hotspots={scenes[currentSceneIndex].hotspots}
               onSceneChange={handleSceneChange}
-            />
+            /> */}
+            <Suspense fallback={<div>Loading...</div>}>
+  <PannellumReact
+    image={scenes[currentSceneIndex]?.image}
+    hotspots={scenes[currentSceneIndex]?.hotspots}
+    onSceneChange={handleSceneChange}
+  />
+</Suspense>
           </div>
         </div>
       );
