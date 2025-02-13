@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, startTransition} from 'react';
 import PannellumReact from './Pano13';
 import Pic1 from '../pic1.jpg';
 import Pic2 from '../pic2.jpg';
@@ -90,39 +90,39 @@ function Mumbai (){
         },
       ];
     
-      const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
-      const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
+    //   const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
+    //   const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
+
+    // const handleSceneChange = (targetSceneId) => {
+    //   setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
     
-     
+    //   setTimeout(() => {
+    //     setCurrentSceneIndex(() => {
+    //       const newSceneIndex = scenes.findIndex(scene => scene.id === targetSceneId);
+    //       return newSceneIndex !== -1 ? newSceneIndex : currentSceneIndex; // Only change if valid scene is found
+    //     });
     
-    //   const handleSceneChange = (direction) => {
-    //     setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
-     
-    //     setTimeout(() => {
-    //       setCurrentSceneIndex((prevIndex) => {
-    //         if (direction === 'next') {
-    //           return (prevIndex + 1) % scenes.length; // Cycle through scenes forward
-    //         } else if (direction === 'prev') {
-    //           return (prevIndex - 1 + scenes.length) % scenes.length; // Cycle backward
-    //         }
-    //         return prevIndex;
-    //       });
-    //       setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
-    //     }, 1500);
-    //  };
-    const handleSceneChange = (targetSceneId) => {
-      setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
+    //     setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
+    //   }, 1500);
+    // };
     
-      setTimeout(() => {
+    const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
+  const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
+
+  const handleSceneChange = (targetSceneId) => {
+    setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
+
+    setTimeout(() => {
+      startTransition(() => {
         setCurrentSceneIndex(() => {
           const newSceneIndex = scenes.findIndex(scene => scene.id === targetSceneId);
-          return newSceneIndex !== -1 ? newSceneIndex : currentSceneIndex; // Only change if valid scene is found
+          return newSceneIndex !== -1 ? newSceneIndex : currentSceneIndex;
         });
-    
+
         setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
-      }, 1500);
-    };
-    
+      });
+    }, 1500);
+  };
     // Inside your PannellumReact component:
     <PannellumReact
       image={scenes[currentSceneIndex].image}
@@ -148,34 +148,3 @@ function Mumbai (){
 export default Mumbai;
 
 
-
-
- // const handleSceneChange = (isNextScene) => {
-      //   if (isNextScene) {
-      //     // Start Zoom-In Effect
-      //     setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
-    
-      //     setTimeout(() => {
-      //       // Switch to next scene after zoom effect completes
-      //       setCurrentSceneIndex((prevIndex) => (prevIndex + 1) % scenes.length);
-      //       setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" }); // Reset zoom instantly
-      //     }, 1500);
-      //   }
-      // };
-
-
-//   const handleSceneChange = (direction) => {
-  //     setTransitionStyle({ transform: 'scale(1.3)', transition: 'transform 1.5s ease-in-out' });
-
-  //     setTimeout(() => {
-  //         setCurrentSceneIndex((prevIndex) => {
-  //             const currentScene = scenes[prevIndex];
-  //             const hotspot = currentScene.hotspots.find(h => h.id === direction);
-  //             if (hotspot && hotspot.isNextScene) {
-  //                 return scenes.findIndex(scene => scene.image === hotspot.image);
-  //             }
-  //             return prevIndex;
-  //         });
-  //         setTransitionStyle({ transform: 'scale(1)', transition: 'transform 0.1s ease-in-out' });
-  //     }, 1500);
-  // };
