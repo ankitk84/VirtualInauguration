@@ -1,4 +1,4 @@
-import React, {useState, useTransition, Suspense} from 'react';
+import React, {useState, Suspense} from 'react';
 import PannellumReact from './Pano13';
 import Pic1 from '../pic1.jpg';
 import Pic2 from '../pic2.jpg';
@@ -6,7 +6,9 @@ import Pic3 from '../pic3.jpg';
 import Pic4 from '../pic4.jpg';
 import Pic5 from '../pic5.jpg';
 import Pic6 from '../pic6.jpg';
-import Pic7 from '../pic7.jpg'
+import Pic7 from '../pic7.jpg';
+import Pic8 from '../pic8.jpg';
+import Pic11 from '../pic11.jpg';
 function Mumbai (){
     const scenes = [
         {
@@ -59,10 +61,10 @@ function Mumbai (){
           id: 5,
           image: Pic7,
           hotspots: [
-            { id: 'a', pitch: -15, yaw: 95, text: 'Info Hotspot 3' },
+            // { id: 'a', pitch: -15, yaw: 95, text: 'Info Hotspot 3' },
             // { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
             // { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
-            { id: 'next',id1:5,  pitch: -15, yaw: 45, text: 'Next Scene', isNextScene: true },
+            { id: 'next',id1:11,  pitch: -15, yaw: 155, text: 'Next Scene', isNextScene: true },
             {id: 'prev',id1:4,pitch: -55, yaw: 265, text: 'prev Scene1', isPrevScene: true }, 
           ],
         },
@@ -86,43 +88,67 @@ function Mumbai (){
             {id: 'prev',id1:7,pitch: -5, yaw: 45, text: 'prev Scene1', isPrevScene: true }, 
           ],
         },
+        {
+          id: 8,
+          image: Pic8,
+          hotspots: [
+            { id: 'a', pitch: 25, yaw: -75, text: 'Info Hotspot 3' },
+            { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
+            { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
+            { id: 'next',id1:11,  pitch: -8, yaw: 35, text: 'Next Scene', isNextScene: true },
+            {id: 'prev',id1:5,pitch: -5, yaw: 45, text: 'prev Scene1', isPrevScene: true }, 
+          ],
+        },
+        {
+          id: 11,
+          image: Pic11,
+          hotspots: [
+            { id: 'a', pitch: 25, yaw: -75, text: 'Info Hotspot 3' },
+            { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
+            { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
+            { id: 'next',id1:11,  pitch: -8, yaw: 35, text: 'Next Scene', isNextScene: true },
+            {id: 'prev',id1:11,pitch: -5, yaw: 265, text: 'prev Scene1', isPrevScene: true }, 
+          ],
+        },
+
+
       ];
     
-    //   const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
-    //   const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
+      const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
+      const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
 
-    // const handleSceneChange = (targetSceneId) => {
-    //   setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
+    const handleSceneChange = (targetSceneId) => {
+      setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
     
-    //   setTimeout(() => {
-    //     setCurrentSceneIndex(() => {
-    //       const newSceneIndex = scenes.findIndex(scene => scene.id === targetSceneId);
-    //       return newSceneIndex !== -1 ? newSceneIndex : currentSceneIndex; // Only change if valid scene is found
-    //     });
-    
-    //     setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
-    //   }, 1500);
-    // };
-    
-    const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
-  const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
-
-  const [startTransition] = useTransition(); // Removed `isPending`
-
-  const handleSceneChange = (targetSceneId) => {
-    setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
-  
-    setTimeout(() => {
-      startTransition(() => {
-        setCurrentSceneIndex((prevIndex) => {
+      setTimeout(() => {
+        setCurrentSceneIndex(() => {
           const newSceneIndex = scenes.findIndex(scene => scene.id === targetSceneId);
-          return newSceneIndex !== -1 ? newSceneIndex : prevIndex;
+          return newSceneIndex !== -1 ? newSceneIndex : currentSceneIndex; // Only change if valid scene is found
         });
-      });
+    
+        setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
+      }, 1500);
+    };
+    
+  //   const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
+  // const [transitionStyle, setTransitionStyle] = useState({ transform: "scale(1)", transition: "transform 1.5s ease-in-out" });
+
+  // const [startTransition] = useTransition(); // Removed `isPending`
+
+  // const handleSceneChange = (targetSceneId) => {
+  //   setTransitionStyle({ transform: "scale(1.3)", transition: "transform 1.5s ease-in-out" });
   
-      setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
-    }, 1500);
-  };
+  //   setTimeout(() => {
+  //     startTransition(() => {
+  //       setCurrentSceneIndex((prevIndex) => {
+  //         const newSceneIndex = scenes.findIndex(scene => scene.id === targetSceneId);
+  //         return newSceneIndex !== -1 ? newSceneIndex : prevIndex;
+  //       });
+  //     });
+  
+  //     setTransitionStyle({ transform: "scale(1)", transition: "transform 0.1s ease-in-out" });
+  //   }, 1500);
+  // };
 
  
     // Inside your PannellumReact component:

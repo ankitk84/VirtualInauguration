@@ -47,12 +47,12 @@ const RibbonCutting = () => {
       <button
         onClick={startCutting}
         style={{
-          padding: "12px 24px",
-          fontSize: "16px",
+          // padding: "12px 24px",
+          // fontSize: "16px",
           cursor: "pointer",
           backgroundColor: "#007bff",
           color: "white",
-          border: "none",
+          // border: "none",
           borderRadius: "5px",
           boxShadow: "2px 2px 5px rgba(0,0,0,0.2)",
         }}
@@ -71,6 +71,8 @@ const RibbonCutting = () => {
             position: "absolute",
             left: "50%",
             transform: "translateX(-100%)",
+            borderRadius: "5px",
+            boxShadow: "2px 2px 5px rgba(0,0,0,0.2)",
           }}
           animate={{
             scaleX: cutting ? 0 : 1, // Shrinks outward
@@ -86,6 +88,8 @@ const RibbonCutting = () => {
             width: "80%",
             transformOrigin: "left center",
             position: "absolute",
+            borderRadius: "5px",
+            boxShadow: "2px 5px 5px rgba(0,0,0,0.2)",
           }}
           animate={{
             scaleX: cutting ? 0 : 1, // Shrinks outward
@@ -104,6 +108,8 @@ const RibbonCutting = () => {
             left: "45%",
             fontSize: "50px",
             transformOrigin: "center center",
+            
+            
           }}
           animate={{
             rotate: cutting ? 0 : 45, // Scissors cutting (opening effect)

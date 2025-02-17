@@ -611,6 +611,7 @@ const PannellumReact = ({ image, hotspots = [], onSceneChange }) => {
         <div 
         // style={{ transform: `scale(${scale})`, transformOrigin: 'center' }}
         style={{
+          margin:"0px",
           transform: `scale(${scale})`,
           transformOrigin: "center",
           transition: "transform 0.1s ease-out",
@@ -828,7 +829,7 @@ const PannellumReact = ({ image, hotspots = [], onSceneChange }) => {
 
         {/* Show Tooltip when hovering over a hotspot */}
         {hoveredHotspot && (
-          <Html position={sphericalToCartesian(300, hoveredHotspot.pitch-5, hoveredHotspot.yaw)}>
+          <Html position={sphericalToCartesian(300, hoveredHotspot.pitch, hoveredHotspot.yaw)}>
             <div
               style={{
                 color: 'white',
