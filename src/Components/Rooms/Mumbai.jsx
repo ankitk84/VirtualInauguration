@@ -18,7 +18,7 @@ function Mumbai (){
           hotspots: [
             // { id: 'a', pitch: -5, yaw: -50, text: 'Info Hotspot 1' },
             // { id: 'b', pitch: -5, yaw: 50, text: 'Info Hotspot 2' },
-            { id: 'c', pitch: -5, yaw: 75, text: 'Info Hotspot 3' },
+            // { id: 'c', pitch: -5, yaw: 75, text: 'Info Hotspot 3' },
             { id: 'next',id1:2,  pitch: -10, yaw: 50, text: 'Next Scene pic3', isNextScene: true },
             {id: 'prev',id1:3, pitch: -40, yaw: 265, text: 'prev Scene1 pic5', isPrevScene: true }, 
           ],
