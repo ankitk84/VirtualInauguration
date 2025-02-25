@@ -6,9 +6,10 @@ import Pic3 from '../pic3.jpg';
 import Pic4 from '../pic4.jpg';
 import Pic5 from '../pic5.jpg';
 import Pic6 from '../pic6.jpg';
-import Pic7 from '../pic7.jpg';
+// import Pic7 from '../pic7.jpg';
 import Pic8 from '../pic8.jpg';
 import Pic11 from '../pic11.jpg';
+import Pic12 from '../pic12.jpg';
 function Mumbai (){
     const scenes = [
         {
@@ -17,7 +18,7 @@ function Mumbai (){
           hotspots: [
             // { id: 'a', pitch: -5, yaw: -50, text: 'Info Hotspot 1' },
             // { id: 'b', pitch: -5, yaw: 50, text: 'Info Hotspot 2' },
-            // { id: 'c', pitch: -5, yaw: 75, text: 'Info Hotspot 3' },
+            { id: 'c', pitch: -5, yaw: 75, text: 'Info Hotspot 3' },
             { id: 'next',id1:2,  pitch: -10, yaw: 50, text: 'Next Scene pic3', isNextScene: true },
             {id: 'prev',id1:3, pitch: -40, yaw: 265, text: 'prev Scene1 pic5', isPrevScene: true }, 
           ],
@@ -59,12 +60,12 @@ function Mumbai (){
         },
         {
           id: 5,
-          image: Pic7,
+          image: Pic11,
           hotspots: [
             // { id: 'a', pitch: -15, yaw: 95, text: 'Info Hotspot 3' },
-            // { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
+            { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
             // { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
-            { id: 'next',id1:11,  pitch: -15, yaw: 155, text: 'Next Scene', isNextScene: true },
+            { id: 'next',id1:11,  pitch: -18, yaw: 75, text: 'Next Scene', isNextScene: true },
             {id: 'prev',id1:4,pitch: -55, yaw: 265, text: 'prev Scene1', isPrevScene: true }, 
           ],
         },
@@ -101,13 +102,13 @@ function Mumbai (){
         },
         {
           id: 11,
-          image: Pic11,
+          image: Pic12,
           hotspots: [
-            { id: 'a', pitch: 25, yaw: -75, text: 'Info Hotspot 3' },
-            { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
-            { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
-            { id: 'next',id1:11,  pitch: -8, yaw: 35, text: 'Next Scene', isNextScene: true },
-            {id: 'prev',id1:11,pitch: -5, yaw: 265, text: 'prev Scene1', isPrevScene: true }, 
+            { id: 'a', pitch: -18, yaw: -55, text: 'Info Hotspot 3' },
+            // { id: 'b', pitch: -18, yaw: 5, text: 'Info Hotspot 4' },
+            // { id: 'c', pitch: 18, yaw: 160, text: 'Info Hotspot 4' },    
+            // { id: 'next',id1:11,  pitch: -8, yaw: 35, text: 'Next Scene', isNextScene: true },
+            {id: 'prev',id1:5,pitch: -5, yaw: 265, text: 'prev Scene1', isPrevScene: true }, 
           ],
         },
 

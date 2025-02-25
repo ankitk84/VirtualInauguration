@@ -607,11 +607,10 @@ const PannellumReact = ({ image, hotspots = [], onSceneChange }) => {
 
 
     return (
-      <Html position={sphericalToCartesian(300, hotspot.pitch, hotspot.yaw)}>
+      <Html position={sphericalToCartesian(300, hotspot.pitch+15, hotspot.yaw-15)}>
         <div 
         // style={{ transform: `scale(${scale})`, transformOrigin: 'center' }}
         style={{
-          margin:"0px",
           transform: `scale(${scale})`,
           transformOrigin: "center",
           transition: "transform 0.1s ease-out",
@@ -788,7 +787,7 @@ const PannellumReact = ({ image, hotspots = [], onSceneChange }) => {
         {hotspots.map((hotspot) => {
           // Destructure hotspot properties
           const { yaw, pitch, id, id1,text, isNextScene, isPrevScene} = hotspot;
-          console.log( yaw, pitch, id,id1, text,isNextScene, isPrevScene, "hotspot");
+          console.log( pitch, yaw, id,id1, text, "hotspot");
           // Convert to cylindrical coordinates (for hotspot mesh positions)
           const position = cylindricalToCartesian(300, pitch, yaw);
 
@@ -829,7 +828,7 @@ const PannellumReact = ({ image, hotspots = [], onSceneChange }) => {
 
         {/* Show Tooltip when hovering over a hotspot */}
         {hoveredHotspot && (
-          <Html position={sphericalToCartesian(300, hoveredHotspot.pitch, hoveredHotspot.yaw)}>
+          <Html position={sphericalToCartesian(300, hoveredHotspot.pitch-5, hoveredHotspot.yaw)}>
             <div
               style={{
                 color: 'white',

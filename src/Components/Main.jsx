@@ -29,16 +29,16 @@ const Main= () => {
       description: 'The welfare facility in Kota aims to enhance local infrastructure and provide better resources for the population.',
       inaugurationMessage: 'The Kota welfare facility marks a significant step towards improving the region’s social and healthcare services.',
     },
-    {
-      name: 'Bharatpur',
-      description: 'The Bharatpur welfare facility will focus on providing educational and healthcare services to underserved communities.',
-      inaugurationMessage: 'With great pride, we announce the inauguration of the Bharatpur welfare facility, dedicated to improving lives in the area.',
-    },
-    {
-      name: 'Salawas',
-      description: 'Salawas now has its own welfare facility that will contribute to the region’s overall development and community welfare.',
-      inaugurationMessage: 'The Salawas welfare facility is now open, providing vital services and contributing to the region’s growth.',
-    },
+    // {
+    //   name: 'Bharatpur',
+    //   description: 'The Bharatpur welfare facility will focus on providing educational and healthcare services to underserved communities.',
+    //   inaugurationMessage: 'With great pride, we announce the inauguration of the Bharatpur welfare facility, dedicated to improving lives in the area.',
+    // },
+    // {
+    //   name: 'Salawas',
+    //   description: 'Salawas now has its own welfare facility that will contribute to the region’s overall development and community welfare.',
+    //   inaugurationMessage: 'The Salawas welfare facility is now open, providing vital services and contributing to the region’s growth.',
+    // },
     {
       name: 'Mumbai',
       description: 'Mumbai now has its own welfare facility that will contribute to the region’s overall development and community welfare.',
